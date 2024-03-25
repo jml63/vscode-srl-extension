@@ -1,0 +1,11 @@
+{
+    "Conditional statement": {
+        "prefix": "SEL",
+        "body": [
+            "{{SEL:(1=1):",
+            "    $0",
+            "}}"
+        ],
+        "description": "Conditional statement"
+    }
+}

@@ -1,0 +1,159 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": "SITS SRL Syntax",
+	"scopeName": "source.srl",
+	"patterns": [
+		{
+			"include": "#comments"
+		},
+		{
+			"include": "#formats"
+		},
+		{
+			"include": "#golds"
+		},
+		{
+			"include": "#variables"
+		},
+		{
+			"include": "#switches"
+		},
+		{
+			"include": "#registers"
+		},
+		{
+			"include": "#fields"
+		},
+		{
+			"include": "#dictionaries"
+		},
+		{
+			"include": "#entities"
+		},
+		{
+			"include": "#slp"
+		},
+		{
+			"include": "#strings"
+		},
+		{
+			"include": "#numbers"
+		}
+	],
+	"repository": {
+		"formats": {
+			"patterns": [
+				{
+					"name": "format.srl",
+					"match": "(?:&[A-Za-zCDEFGHIKLMNOPQRSTUVWX#%@])\\d*"
+				}
+			]
+		},
+		"golds": {
+			"patterns": [
+				{
+					"name": "gold.srl",
+					"match": "(·;|·!|·&|·<|·>|·=|·\\|])"
+				}
+			]
+		},
+		"fields": {
+			"patterns": [
+				{
+					"name": "field-lhs.srl",
+					"match": "(?<=(?:<|·;|=))([A-Za-z0-9]{3,4}_[A-Za-z0-9]{3,4})(?==)"
+				},
+				{
+					"name": "field-rhs.srl",
+					"match": "(?<=<)([A-Za-z0-9]{3,4}_[A-Za-z0-9]{3,4})(?=[.·>]?)"
+				},
+				{
+					"name": "program-field-lhs.srl",
+					"match": "(?<=<|·;)(P\\d{2})(?==|>)"
+				}
+				
+			]
+		},
+		"registers": {
+			"patterns": [
+				{
+					"name": "register.srl",
+					"match": "\\$(agc_code|alu_code|cen_code|clr_code|eex_code|esd_code|ipu_code|mst_code|orc_code|ppc_code|prs_code|snk_code|stu_code|usr_code|lan_code|mhd_code|mua_code|scj_code|spr_code|ual_begd|ual_begt|usr_emad|usr_lagc|usr_name|usr_syss|usr_ugrc|usr_wecc|category_list|device_type|login_mode|pop_profile|screen_height|screen_width|uniface_dir|working_dir|com_list|cpg_code|cus_dbty|cus_regn|cuscod|cusnam|cus_insl|login_page|mua_dmod|pra_code|rgd_cssc|rgd_htvc|ugl_dtas|ugl_fbas|ugl_gaes|ugl_pras|ugl_rtas|applname|componentname|clock|date|datim|logical|processinfo|putmess|user|uuid|set info|set text|set createmml|set io|set dmu|set trace|web|webinfo|57|58|curocc|dbocc|fielddbvalue|fieldvalrep|hits|idpart|item|itemcount|itemnr|length|lowercase|ltrim|next|nlsinternaltime|nlstimezone|nlstimezonelist|number|previous|replace|rscan|rtrim|scan|sortlist|sortlistid|split|string|text|totdbocc|totocc|uppercase|valrep|valuepart|abs|acos|asin|atan|cos|e|exp|exp10|fact|frac|int|log|log10|pi|power|sin|sqrt|tan)"
+				}
+			]
+		},
+		"switches": {
+			"patterns": [
+				{
+					"name": "switch.srl",
+					"match": "(?<=(?:<|·;))(BATCH|CACHE|COUNTONLY|CREATEPAL|DELIMITER|FORCEALLFIELDS|FUNCTION|INSTANCE|MAXEXCEEDED|MAXGET|NOHITS|NOVALUE|RANGE|SEARCH|SORT|UNIQUE|USESQL|WARNKEYS|WARNMAX|WARNZERO)(?=[.·>]?)"
+				}
+			]
+		},
+		"entities": {
+			"patterns": [
+				{
+					"name": "entity.srl",
+					"match": "(?<=<[^<]+\\.)[A-Z]{3,4}(?=[.·>]?)"
+				},
+				{
+					"name": "list-entity.srl",
+					"match": "\\[[A-Z]{3,4}(?=\\.[A-Z]{3,4}:)"
+				}
+			]
+		},
+		"dictionaries": {
+			"patterns": [
+				{
+					"name": "dictionary.srl",
+					"match": "(?<=<[^<]+\\.[A-Z]+\\.)[A-Z]{3,4}(?=[.·>]?)"
+				},
+				{
+					"name": "list-dictionary.srl",
+					"match": "(?<=\\[[A-Z]{3,4}\\.)[A-Z]{3,4}(?=:)"
+				}
+			]
+		},
+		"variables": {
+            "patterns": [
+                {
+                    "name": "variable",
+                    "match": "(?<=<|--)#\\w+(?=·>|>)|(?<=<|--)#\\w+"
+                }
+            ]
+        },
+		"comments": {
+			"name": "comment.srl",
+			"begin": "--",
+			"end": "--"
+		},
+		"slp": {
+            "patterns": [
+                {
+                    "name": "slp.srl",
+                    "match": "(?<=<)@[^\\s<·>]*(?=·>|>)"
+                },
+				{
+                    "name": "format-slp.srl",
+                    "match": "(?<=G)@[a-zA-Z0-9_]+(?=[.·>]?)"
+                }
+            ]
+		},
+		"strings": {
+			"patterns": [
+				{
+					"name": "string.srl",
+					"match": "\"(.*?)\""
+				}
+			]
+		},
+		"numbers": {
+			"patterns": [
+				{
+					"name": "number.srl",
+					"match": "\\d+(\\.\\d+)?"
+				}
+			]
+		}
+	}
+}

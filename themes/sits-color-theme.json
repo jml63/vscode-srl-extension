@@ -1,0 +1,142 @@
+{
+	"name": "sits",
+	"colors": {
+		"editor.background": "#263238",
+		"editor.foreground": "#eeffff",
+		"activityBarBadge.background": "#007acc",
+		"sideBarTitle.foreground": "#bbbbbb"
+	},
+	"tokenColors": [
+		{
+			"name": "Comment",
+			"scope": [
+				"comment",
+			],
+			"settings": {
+				"foreground": "#109054"
+			}
+		},
+		{
+			"name": "Variables",
+			"scope": [
+				"variable",
+			],
+			"settings": {
+				"foreground": "#97c4e0",
+				"fontStyle": "bold",
+			}
+		},
+		{
+			"name": "String",
+			"scope": [
+				"string",
+			],
+			"settings": {
+				"foreground": "#e97600"
+			}
+		},
+		{
+			"name": "Format",
+			"scope": [
+				"format",
+			],
+			"settings": {
+				"fontStyle": "bold",
+			}
+		},
+		{
+			"name": "Gold",
+			"scope": [
+				"gold",
+			],
+			"settings": {
+				"foreground": "#f6c700",
+				"fontStyle": "bold"
+			}
+		},
+		{
+			"name": "Number",
+			"scope": [
+				"number",
+			],
+			"settings": {
+				
+			}
+		},
+		{
+			"name": "SLP",
+			"scope": [
+				"slp",
+				"format-slp",
+			],
+			"settings": {
+				"fontStyle": "underline"
+			}
+		},
+		{
+			"name": "Field",
+			"scope": [
+				"field-rhs",
+			],
+			"settings": {
+
+			}
+		},
+		{
+			"name": "Field",
+			"scope": [
+				"field-lhs",
+			],
+			"settings": {
+				
+			}
+		},
+		{
+			"name": "Field",
+			"scope": [
+				"program-field-lhs",
+			],
+			"settings": {
+				"foreground": "#964f8e"
+			}
+		},
+		{
+			"name": "Register",
+			"scope": [
+				"register",
+			],
+			"settings": {
+				"foreground": "#bd1e24",
+			}
+		},
+		{
+			"name": "Switch",
+			"scope": [
+				"switch",
+			],
+			"settings": {
+				
+			}
+		},
+		{
+			"name": "Entity",
+			"scope": [
+				"entity",
+				"list-entity"
+			],
+			"settings": {
+				
+			}
+		},
+		{
+			"name": "Dictionary",
+			"scope": [
+				"dictionary",
+				"list-dictionary",
+			],
+			"settings": {
+				
+			}
+		}
+	]
+}

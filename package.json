@@ -1,0 +1,43 @@
+{
+  "name": "srl",
+  "displayName": "SITS SRL Syntax",
+  "description": "SITS SRL Syntax",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.87.0"
+  },
+  "categories": [
+    "Programming Languages",
+    "Themes",
+    "Snippets"
+  ],
+  "contributes": {
+    "languages": [{
+      "id": "srl",
+      "aliases": ["SITS SRL Syntax", "srl"],
+      "extensions": [".srl",".slp"],
+      "configuration": "./language-configuration.json"
+    }],
+    "grammars": [{
+      "language": "srl",
+      "scopeName": "source.srl",
+      "path": "./syntaxes/srl.tmLanguage.json",
+      "embeddedLanguages": {
+
+      }
+    }],
+    "themes": [
+      {
+        "label": "sits",
+        "uiTheme": "vs-dark",
+        "path": "./themes/sits-color-theme.json"
+      }
+    ],
+    "snippets": [
+      {
+        "language": "srl",
+        "path": "./snippets/snippets.json"
+      }
+    ]
+  }
+}
